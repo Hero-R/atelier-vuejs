@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello World</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+	<div id="exercise">
+		<!-- 1) fill in the <p> below with your name and age - Using Interpolation -->
+		<p>VueJS is really cool - {{ name }} ({{ age }})</p>
+		<!-- 2) Affichez votre age multiplié par 3 -->
+		<p>{{ getNewAge() }}</p>
+		<!-- 3) Appelez une fonction pour afficher un nombre décimal aléatoire entre 0 and 1 (Math.random()) -->
+		<p>{{ getRandom() }}</p>
+		<!-- 4) Cherchez n'importe quelle image sur google et affichez là ici en attachant l'attribut "src" avec v-bind -->
+		<div>
+			<img style="width:100px;height:100px" v-bind:src="image">
+		</div>
+		<!-- 5) Pre-remplissez ce champ de texte avec votre nom (utilisez l'attribut "value") -->
+		<div>
+			<input type="text" v-on:blur="updateName">
+		</div>
+	</div>
+
+	<script>
+		new Vue({
+			el: '#exercise',
+			data: {
+				name: 'Reda',
+				age: 25,
+				image: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg'
+			},
+			methods: {
+				getNewAge: function() {
+					return this.age*3;
+				},
+				getRandom: function() {
+					return Math.random();
+				},
+				updateName: function(event) {
+					this.name = event.target.value;
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>
