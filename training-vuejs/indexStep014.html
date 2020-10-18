@@ -1,0 +1,32 @@
+<!-- Interaction with the DOM - Shortcuts for directives -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="text" @input="updateName">
+		<p>{{ name }}</p>
+		<a :href="link">Google</a>
+	</div>
+	
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				name: 'Google',
+				link: 'https://www.google.com/'
+			},
+			methods: {
+				updateName: function(event) {
+					this.name = event.target.value;
+				}
+			}
+		});
+	</script>
+</body>
+<html>
