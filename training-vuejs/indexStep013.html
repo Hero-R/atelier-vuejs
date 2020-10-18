@@ -1,0 +1,44 @@
+<!-- Interaction with the DOM - React to changes with Watch -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="increase">Increase</button>
+		{{ result }}
+	</div>
+	
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				counter: 0,
+				result: 0
+			},
+			watch: {
+				counter: function(value) {
+					if(value == 0){
+						this.result = '0';
+					} else {
+						this.result = 'increased to ' + value;
+					}
+				}
+			},
+			methods: {
+				increase: function() {
+					this.counter++;
+				}
+			}
+		});
+	</script>
+</body>
+<html>
+
+<!-- The difference with functions is that VueJS analyzes 
+the code of the computed properties and knows if it should 
+rerun the code of the computed property or not unlike the functions -->
