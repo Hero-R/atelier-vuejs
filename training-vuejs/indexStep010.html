@@ -1,0 +1,25 @@
+<!-- Interaction with the DOM - Two way binding -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model="name">
+		<p>{{ name }}</p>
+	</div>
+	
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				name: 'Reda'
+			}
+		});
+	</script>
+</body>
+<html>
