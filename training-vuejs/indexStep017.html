@@ -1,4 +1,4 @@
-<!-- Styling de l’application avec CSS - Utilisation des objets -->
+<!-- Styling de l’application avec CSS - Utilisation des noms -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,7 @@
 <body>
 	<div id="app">
 		<div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
-		<div class="demo"></div>
+		<div class="demo" :class="color"></div>
 		<div class="demo"></div>
 	</div>
 	
@@ -36,7 +36,8 @@
 		new Vue({
 			el: '#app',
 			data: {
-				attachRed: false
+				attachRed: false,
+				color: 'green'
 			},
 			computed: {
 				divClasses: function() {
