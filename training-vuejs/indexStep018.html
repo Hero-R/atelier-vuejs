@@ -1,4 +1,4 @@
-<!-- Styling de l’application avec CSS - Utilisation des objets -->
+<!-- Styling de l’application avec CSS - Attachement de plusieurs classes / combinaisons objets / classes -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,15 +28,17 @@
 <body>
 	<div id="app">
 		<div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
-		<div class="demo"></div>
-		<div class="demo"></div>
+		<div class="demo" :class="color"></div>
+		<div class="demo" :class="[color, { red : attachRed }]"></div>
+		<input type="text" v-model="color">
 	</div>
 	
 	<script>
 		new Vue({
 			el: '#app',
 			data: {
-				attachRed: false
+				attachRed: false,
+				color: 'green'
 			},
 			computed: {
 				divClasses: function() {
