@@ -1,0 +1,28 @@
+<!-- Affichage conditionné et listes - Rendu des listes de données -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<template v-for="personne in personnes">
+				<span v-for="(value, key) in personne">{{ key }} : {{ value }}, </h1>
+		</template>
+	</div>
+	
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				ingredients: [ 'viande', 'ail', 'tomates', 'pommes de terre' ],
+				personnes: [{ nom: 'Ahmed', age: 30, couleur: 'noir'},
+							{ nom: 'Aicha', age: 20, couleur: 'blanc'}]
+			}
+		});
+	</script>
+</body>
+<html>
