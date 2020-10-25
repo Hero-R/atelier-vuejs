@@ -1,0 +1,29 @@
+<!-- Affichage conditionné et listes - Rendu des listes de données -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<template v-for="(ingredient, index) in ingredients">
+				<h1>{{ ingredient }}</h1>
+				<p>{{ index }}</p>
+		</template>
+	</div>
+	
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				ingredients: [ 'viande', 'ail', 'tomates', 'pommes de terre' ],
+				personnes: [{ nom: 'Ahmed', age: 30, couleur: 'noir'},
+							{ nom: 'Aicha', age: 20, couleur: 'blanc'}]
+			}
+		});
+	</script>
+</body>
+<html>
